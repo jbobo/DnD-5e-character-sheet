@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'test_tab.dart';
 
+
 class DndApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return CupertinoApp(
@@ -12,15 +13,25 @@ class DndApp extends StatelessWidget{
   }
 }
 
+class DndHomeScreenTabs extends StatefulWidget {
+  @override
+  _DndHomeScreenTabsState createState() => _DndHomeScreenTabsState();
+}
 
-class DndHomeScreenTabs extends StatelessWidget{
+
+// with AutomaticKeepAliveClientMixin
+// @override
+//   bool get wantKeepAlive => true;
+class _DndHomeScreenTabsState extends State<DndHomeScreenTabs>{
+  final _controller = CupertinoTabController(initialIndex: 2);
+
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.plus_circled),
+            icon: Icon(CupertinoIcons.profile_circled,),
             title: Text('Tab 1'),
           ),
           BottomNavigationBarItem(
@@ -41,8 +52,9 @@ class DndHomeScreenTabs extends StatelessWidget{
           ),
         ],
       ),
-      tabBuilder: (context, index) {
-        switch (index) {
+      controller: _controller,
+      tabBuilder: (context, tabIndex) {
+        switch (tabIndex) {
           case 0:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
@@ -84,6 +96,12 @@ class DndHomeScreenTabs extends StatelessWidget{
         }
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
 

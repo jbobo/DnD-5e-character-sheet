@@ -1,4 +1,4 @@
-package com.example.my_app;
+package com.example.dnd_character_sheet;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

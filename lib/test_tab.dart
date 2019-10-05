@@ -1,4 +1,6 @@
+import 'package:dnd_character_sheet/presentation/my_icons_icons.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 
 class TestTab extends StatefulWidget {
@@ -14,7 +16,7 @@ class _TestTabState extends State<TestTab> {
     return CustomScrollView(
       slivers: const <Widget>[
         CupertinoSliverNavigationBar(
-          largeTitle: Text('Test Tab 1'),
+          largeTitle: Icon(MyIcons.colorize, size: 50,),
         ),
       ],
     );

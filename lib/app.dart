@@ -1,8 +1,10 @@
 // import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-import 'test_tab.dart';
+import 'package:dnd_character_sheet/test_tab.dart';
+import 'package:dnd_character_sheet/presentation/my_icons_icons.dart';
 
 
 class DndApp extends StatelessWidget{
@@ -23,7 +25,7 @@ class DndHomeScreenTabs extends StatefulWidget {
 // @override
 //   bool get wantKeepAlive => true;
 class _DndHomeScreenTabsState extends State<DndHomeScreenTabs>{
-  final _controller = CupertinoTabController(initialIndex: 2);
+  final _tabController = CupertinoTabController(initialIndex: 2);
 
   @override
   Widget build(BuildContext context) {
@@ -31,28 +33,28 @@ class _DndHomeScreenTabsState extends State<DndHomeScreenTabs>{
       tabBar: CupertinoTabBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.profile_circled,),
-            title: Text('Tab 1'),
+            icon: Icon(MyIcons.colorize),
+            title: Text('Spells'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.ac_unit),
+            title: Text('Lore'),
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.plus_circled),
-            title: Text('Tab 2'),
+            title: Text('Stats'),
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.plus_circled),
-            title: Text('Tab 3'),
+            title: Text('Skills'),
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.plus_circled),
-            title: Text('Tab 4'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.plus_circled),
-            title: Text('Tab 5'),
+            title: Text('Weapons'),
           ),
         ],
       ),
-      controller: _controller,
+      controller: _tabController,
       tabBuilder: (context, tabIndex) {
         switch (tabIndex) {
           case 0:
@@ -100,25 +102,25 @@ class _DndHomeScreenTabsState extends State<DndHomeScreenTabs>{
 
   @override
   void dispose() {
-    _controller.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 }
 
 
-class DndHomeScreen extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: const Text('DnD 5e Character Sheet'),
-      ),
-      child: Center(
-        child: Text('Hello World'),
-      ),
-    );
-  }
-}
+// class DndHomeScreen extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     return CupertinoPageScaffold(
+//       navigationBar: CupertinoNavigationBar(
+//         middle: const Text('DnD 5e Character Sheet'),
+//       ),
+//       child: Center(
+//         child: Text('Hello World'),
+//       ),
+//     );
+//   }
+// }
 
 
 // class HomeScreenTabs extends StatelessWidget{

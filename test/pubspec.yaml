@@ -18,7 +18,6 @@ environment:
 
 dependencies:
   cupertino_icons: ^0.1.2
-  icons:
   provider:
   scoped_model:
   flutter:

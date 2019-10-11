@@ -1,6 +1,8 @@
 import 'package:dnd_character_sheet/presentation/my_icons_icons.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+// The Consumer, from the provider package, assists with state management
+// import 'package:provider/provider.dart';
+// import 'model/app_state_model.dart';
 
 
 class TestTab extends StatefulWidget {
@@ -16,17 +18,13 @@ class _TestTabState extends State<TestTab> {
     return CustomScrollView(
       slivers: const <Widget>[
         CupertinoSliverNavigationBar(
-          largeTitle: Icon(MyIcons.colorize, size: 50,),
+          largeTitle: Text("Test Title"),
         ),
       ],
     );
   }
 }
 
-
-// The Consumer, from the provider package, assists with state management
-// import 'package:provider/provider.dart';
-// import 'model/app_state_model.dart';
 //
 // class TestTab extends StatelessWidget {
 //   @override

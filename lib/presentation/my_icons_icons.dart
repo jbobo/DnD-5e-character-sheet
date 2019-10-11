@@ -58,11 +58,9 @@ import 'package:flutter/widgets.dart';
 class MyIcons {
   MyIcons._();
 
-  static const String iconPackage = 'MyIcons';
-
   static const _kFontFam = 'MyIcons';
 
-  static const IconData colorize = const IconData(0xe800, fontFamily: _kFontFam, fontPackage: iconPackage);
+  static const IconData colorize = const IconData(0xe800, fontFamily: _kFontFam);
   static const IconData tune = const IconData(0xe801, fontFamily: _kFontFam);
   static const IconData toc = const IconData(0xe802, fontFamily: _kFontFam);
   static const IconData magic_wand = const IconData(0xe803, fontFamily: _kFontFam);
